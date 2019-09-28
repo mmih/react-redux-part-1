@@ -1,4 +1,6 @@
-import { ADD_PAINTING_CATEGORY, REMOVE_PAINTING_CATEGORY } from '../constants/actionTypes';
+import { ADD_PAINTING_CATEGORY, REMOVE_PAINTING_CATEGORY, ADD_MOVIE, REMOVE_MOVIE } from '../constants/actionTypes';
+
+let nextMovieId = 0
 
 /**
  * Add a new paintings category.
@@ -26,6 +28,25 @@ export const removePaintingCategory = categoryId => {
         type: REMOVE_PAINTING_CATEGORY,
         payload: {
             categoryId
+        }
+    }
+};
+
+
+export const addNewMovie = movie => {
+    return {
+        type: ADD_MOVIE,
+        payload: {
+            movie
+        }
+    }
+};
+
+export const removeMovie = movieId => {
+    return {
+        type: REMOVE_MOVIE,
+        payload: {
+            movieId
         }
     }
 };
