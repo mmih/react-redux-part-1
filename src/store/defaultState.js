@@ -12,9 +12,9 @@ const defaultState = {
         {id: 5, name: 'mountains'},
     ],
     moviesList: [
-        {id: 1, name: 'Casino Royale'},
-        {id: 2, name: 'Quantum Of Solace'},
-        {id: 3, name: 'Skyall'},
+        {id: 1, name: 'Casino Royale', pos: 3},
+        {id: 2, name: 'Quantum Of Solace', pos: 2},
+        {id: 3, name: 'Skyall', pos: 1},
     ]
 };
 

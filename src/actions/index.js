@@ -1,6 +1,7 @@
-import { ADD_PAINTING_CATEGORY, REMOVE_PAINTING_CATEGORY, ADD_MOVIE, REMOVE_MOVIE } from '../constants/actionTypes';
+import { ADD_PAINTING_CATEGORY, REMOVE_PAINTING_CATEGORY, ADD_MOVIE, REMOVE_MOVIE, ADD_NEW_MOVIE_WITH_POSITION} from '../constants/actionTypes';
+import store from '../store';
 
-let nextMovieId = 0
+let nextMovieId = 3
 
 /**
  * Add a new paintings category.
@@ -34,10 +35,24 @@ export const removePaintingCategory = categoryId => {
 
 
 export const addNewMovie = movie => {
+    const lastPos = Math.max(...store.getState().moviesList.map(o => o.pos), 0);
     return {
         type: ADD_MOVIE,
         payload: {
-            movie
+            movie,
+            id: ++nextMovieId,
+            pos: lastPos
+        }
+    }
+};
+
+export const addNewMovieWithPosition = (movie, pos) => {
+    return {
+        type: ADD_NEW_MOVIE_WITH_POSITION,
+        payload: {
+            movie,
+            pos: pos,
+            id: ++nextMovieId
         }
     }
 };

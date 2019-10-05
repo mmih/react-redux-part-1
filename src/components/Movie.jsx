@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Movie = ({movie, removeMovie}) => {
     return <li>
-        <a href="#" data-id={movie.id}>{movie.name}</a>
+        <a href="#" data-id={movie.id} data-pos={movie.pos}>{movie.name}</a>
         <button onClick={() => removeMovie(movie.id) }>Remove</button>
     </li>;
 };
